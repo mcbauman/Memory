@@ -90,15 +90,19 @@ export default function TextField(){
                 if(aufgedeckteKarten[0]==aufgedeckteKarten[1]){
                     // const array3=[...geloesteKarten,aufgedeckteDivs]
                     // setGeloesteKarten(array3)
-                    setGeloesteKarten([...aufgedeckteDivs])
+                    const newVal=[...aufgedeckteDivs]
+                    setGeloesteKarten(newVal)
+                    newVal.forEach((e)=>e.style.background="lightgreen")
                     setAufgedeckteDivs([])
                     setAufgedeckteKarten([])
-                    geloesteKarten.forEach((e)=>e.style.background="lightgreen")
+                    
                 }else{
                     aufgedeckteDivs.forEach((e)=>e.style.visibility="hidden")
                     setAufgedeckteKarten([])
+                    setAufgedeckteKarten([])
                 }  
-                console.log("aufgedeckteKarten",aufgedeckteKarten);
+            
+            console.log("aufgedeckteKarten",aufgedeckteKarten);
             console.log("aufgedeckteDivs",aufgedeckteDivs);
             console.log("geloesteKaten",geloesteKarten);
             }
