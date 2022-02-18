@@ -84,9 +84,8 @@ export default function TextField(){
     }
     
     useEffect(()=>{
-        setTimeout(()=>{
+        
             if(aufgedeckteKarten.length==2){
-                
                 if(aufgedeckteKarten[0]==aufgedeckteKarten[1]){
                     // const array3=[...geloesteKarten,aufgedeckteDivs]
                     // setGeloesteKarten(array3)
@@ -97,16 +96,18 @@ export default function TextField(){
                     setAufgedeckteKarten([])
                     
                 }else{
-                    aufgedeckteDivs.forEach((e)=>e.style.visibility="hidden")
-                    setAufgedeckteKarten([])
-                    setAufgedeckteKarten([])
+                    setTimeout(()=>{
+                        aufgedeckteDivs.forEach((e)=>e.style.visibility="hidden")
+                        setAufgedeckteKarten([])
+                        setAufgedeckteKarten([])
+                    },3000)
                 }  
             
             console.log("aufgedeckteKarten",aufgedeckteKarten);
             console.log("aufgedeckteDivs",aufgedeckteDivs);
             console.log("geloesteKaten",geloesteKarten);
             }
-        },3000)
+        
         
 },[jemalsAufgedeckteKarten])
 
